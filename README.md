@@ -4,4 +4,4 @@ It's a browser based game made entirely in javascript. You can generate resource
 
 Might never finish it, but I'm having fun with it.
 might get updates
-Fairly simple, but I'm proud of it.
+Fairly simple, but I'm proud of it.# browser_blacksmithing
