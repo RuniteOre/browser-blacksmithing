@@ -1,0 +1,94 @@
+#container{
+	width:99%;
+	height:100%;
+	/*for debuggingborder: 5px solid darkred;*/
+}
+
+
+/*div viewport 60% width of the screen, 60% height of the screen, centered*/
+#viewport {
+	width:50%;
+	height:700px;
+	border:1px solid black;
+	margin:0 auto;
+	display:block;
+	/*scroll the overflow*/
+	overflow:scroll;
+}
+
+/*supplies sits beside viewport div*/
+#supplies {
+	width:20%;
+	height:100%;
+	border:1px solid black;
+	float:left;
+	padding:20px;
+}
+
+#menus {
+	width:20%;
+	height:100%;
+	border:1px solid black;
+	float:right;
+	padding:20px;
+}
+
+/*spot to debug and show status
+R.I.P
+#status {
+	width:100%;
+	height:20%;
+	border:1px solid black;
+}*/
+
+
+/*set generated imgs to reasonable size*/
+#copper_bar {
+	width:50px;
+	height:50px;
+}
+
+#copper_ore {
+	width:50px;
+	height:50px;
+}
+
+#sword {
+	width:50px;
+	height:50px;
+}
+
+#axe {
+	width:50px;
+	height:50px;
+}
+
+#numberofsupplies{
+	margin:0 auto;
+	text-align:center;
+}
+
+/* ***DEPRICATED*** old idea, leaving it in. kind of a funny way to just show the use of js and hidden menus
+/*#header {
+	visibility:hidden;
+}
+
+#menu {
+	visibility:hidden;
+}
+
+#forge {
+	float:left;
+}
+
+#market {
+	float:left;
+}
+
+#header2 {
+	visibility:hidden;
+}
+
+#menu2 {
+	visibility:hidden;
+}*/

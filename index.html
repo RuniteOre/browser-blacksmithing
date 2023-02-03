@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Browser Blacksmithing</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<script src="scripts.js"></script>
+</head>
+<body>
+	<p>Gold: <span id="gold">0</span></p>
+	<p>Copper: <span id="copper">0</span></p>
+
+	<div id="container">
+
+		<div id="supplies">
+			<p id="numberofsupplies">0</p>
+			<button id="button" onclick="createSupplies()">Generate Supplies</button>
+			<p id="amount"></p>
+		</div>
+
+		<div id="menus">
+			<div id="forge">
+				<h1 id="header">Forge</h1>
+				<ul id="menu">
+					<li><button onclick="createSword()">Create Sword</button></li>
+					<li><button onclick="createAxe()">Create Axe</button></li>
+				</ul>
+				<h2 id="header">Smelting</h2>
+				<ul id="menu">
+					<li><button onclick="smeltCopper()">Smelt Copper</button></li>
+				</ul>
+			</div>
+			<div id="market">
+				<h1 id="header">Market</h1>
+				<ul id="menu">
+					<li><button onclick="sellSword()">Sell Sword</button></li>
+					<li><button onclick="sellAxe()">Sell Axe</button></li>
+				</ul>
+			</div>
+			<div id="mines">
+				<h1 id="header">Mines</h1>
+				<ul id="menu">
+					<li><button onclick="mineCopper()">Mine Copper</button></li>
+				</ul>
+			</div>
+		</div>
+
+			<div id="viewport">
+				<p id="info"></p>
+			</div>
+
+		</div>
+
+</body>
+</html>
