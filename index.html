@@ -21,6 +21,8 @@
 			<!--creating the image map-->
 			<map name="townmap">
 				<area shape="rect" coords="403,269, 493,355" alt="blacksmith" href="javascript:blacksmith();">
+				<area shape="rect" coords="151,191, 300,285" alt="market" href="javascript:market();">
+				<area shape="rect" coords="707,0, 825,1222" alt="mines" href="javascript:mines();">
 			</map>
 			<div id="menus">
 				<h1 id="header">Welcome to Balzak</h1>
@@ -31,6 +33,14 @@
 				<ul id="blacksmithmenu">
 					<button id="create_sword" onclick="createSword()">Create Sword</button>
 					<button id="create_axe" onclick="createAxe()">Create Axe</button>
+					<button id="smelt_ore" onclick="smeltCopper()">Smelt Ore</button>
+				</ul>
+				<ul id="marketmenu">
+					<button id="sell_sword" onclick="sellSword()">Sell Sword</button>
+					<button id="sell_axe" onclick="sellAxe()">Sell Axe</button>
+				</ul>
+				<ul id="minesmenu">
+					<button id="mine_copper" onclick="mineCopper()">Mine Copper</button>
 				</ul>
 			</div>
 		</div>

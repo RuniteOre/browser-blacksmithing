@@ -143,7 +143,7 @@ function mineCopper() {
 		let info = document.createElement("p");
 		let infodetail = document.createTextNode("You mined 1 copper ore");
 		info.appendChild(infodetail);
-		document.getElementById("info").appendChild(info);
+		//document.getElementById("info").appendChild(info);
 	}
 	else {
 		//rip in pieces no ore, tell em
@@ -173,7 +173,7 @@ function smeltCopper() {
 		document.getElementById("supplies").appendChild(img);
 		document.getElementById("numberofsupplies").innerHTML = total;
 		//write to info what you got
-		let info = document.createElement("ip");
+		let info = document.createElement("p");
 		let infodetail = document.createTextNode("You made 1 copper bar");
 		info.appendChild(infodetail);
 		document.getElementById("info").appendChild(info);
@@ -188,12 +188,29 @@ function smeltCopper() {
 	}
 }
 
-//function to change the map to an image of the forge and show the forge menu 
 function blacksmith() {
-	//change map to forge
 	//show forge menu
 	document.getElementById("header").innerHTML = "Blacksmith";
 	document.getElementById("menu").style.display = "none";
+	document.getElementById("marketmenu").style.display = "none";
+	document.getElementById("minesmenu").style.display = "none";
 	document.getElementById("blacksmithmenu").style.display = "block";
+}
 
+function market() {
+	//show market menu
+	document.getElementById("header").innerHTML = "Market";
+	document.getElementById("menu").style.display = "none";
+	document.getElementById("blacksmithmenu").style.display = "none";
+	document.getElementById("minesmenu").style.display = "none";
+	document.getElementById("marketmenu").style.display = "block";
+}
+
+function mines() {
+	//show mines menu
+	document.getElementById("header").innerHTML = "Mines";
+	document.getElementById("menu").style.display = "none";
+	document.getElementById("blacksmithmenu").style.display = "none";
+	document.getElementById("marketmenu").style.display = "none";
+	document.getElementById("minesmenu").style.display = "block";
 }

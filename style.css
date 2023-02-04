@@ -36,6 +36,14 @@
 	display:none;
 }
 
+#marketmenu {
+	display:none;
+}
+
+#minesmenu {
+	display:none;
+}
+
 /*set generated imgs to reasonable size*/
 #copper_bar {
 	width:50px;
