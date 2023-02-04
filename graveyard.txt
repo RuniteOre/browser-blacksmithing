@@ -1,0 +1,48 @@
+		<!--<div id="menus">
+			<div id="forge">
+				<h1 id="header">Forge</h1>
+				<ul id="menu">
+					<li><button onclick="createSword()">Create Sword</button></li>
+					<li><button onclick="createAxe()">Create Axe</button></li>
+				</ul>
+				<h2 id="header">Smelting</h2>
+				<ul id="menu">
+					<li><button onclick="smeltCopper()">Smelt Copper</button></li>
+				</ul>
+			</div>
+			<div id="market">
+				<h1 id="header">Market</h1>
+				<ul id="menu">
+					<li><button onclick="sellSword()">Sell Sword</button></li>
+					<li><button onclick="sellAxe()">Sell Axe</button></li>
+				</ul>
+			</div>
+			<div id="mines">
+				<h1 id="header">Mines</h1>
+				<ul id="menu">
+					<li><button onclick="mineCopper()">Mine Copper</button></li>
+				</ul>
+			</div>
+		</div>-->
+
+//***DEPRICATED**** goes with the old stuff from style.css
+//function to open the forge menu when the forge is clicked
+//function forgeMenu() {
+//	var forge = document.getElementById("forge");
+//	forge.style.display = "block";
+//	document.getElementById("header").style.visibility = "visible";
+//	document.getElementById("menu").style.visibility = "visible";
+//}
+
+//function marketMenu() {
+//	var market = document.getElementById("market");
+//	market.style.display = "block";
+//	document.getElementById("header2").style.visibility = "visible";
+//	document.getElementById("menu2").style.visibility = "visible";
+//}
+
+//function to close forge menu
+//function hideForgeMenu() {
+//	var forge = document.getElementById("forge");
+//	forge.style.visibility = "hidden";
+//}

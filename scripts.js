@@ -35,30 +35,8 @@ function createSupplies() {
 	//add the text to the info
 	info.appendChild(infodetail);
 	//add the info to the div
-	document.getElementById("info").appendChild(info);
+	//document.getElementById("info").appendChild(info);
 }
-
-//***DEPRICATED**** goes with the old stuff from style.css
-//function to open the forge menu when the forge is clicked
-//function forgeMenu() {
-//	var forge = document.getElementById("forge");
-//	forge.style.display = "block";
-//	document.getElementById("header").style.visibility = "visible";
-//	document.getElementById("menu").style.visibility = "visible";
-//}
-
-//function marketMenu() {
-//	var market = document.getElementById("market");
-//	market.style.display = "block";
-//	document.getElementById("header2").style.visibility = "visible";
-//	document.getElementById("menu2").style.visibility = "visible";
-//}
-
-//function to close forge menu
-//function hideForgeMenu() {
-//	var forge = document.getElementById("forge");
-//	forge.style.visibility = "hidden";
-//}
 
 //function to create a sword
 function createSword() {
@@ -208,4 +186,14 @@ function smeltCopper() {
 		info.appendChild(infodetail);
 		document.getElementById("info").appendChild(info);
 	}
+}
+
+//function to change the map to an image of the forge and show the forge menu 
+function blacksmith() {
+	//change map to forge
+	//show forge menu
+	document.getElementById("header").innerHTML = "Blacksmith";
+	document.getElementById("menu").style.display = "none";
+	document.getElementById("blacksmithmenu").style.display = "block";
+
 }

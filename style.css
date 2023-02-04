@@ -7,13 +7,15 @@
 
 /*div viewport 60% width of the screen, 60% height of the screen, centered*/
 #viewport {
-	width:50%;
-	height:700px;
-	border:1px solid black;
+	border:5px solid black;
+	/*rounded corners*/
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
 	margin:0 auto;
 	display:block;
-	/*scroll the overflow*/
-	overflow:scroll;
+	float:right;
+	/*scroll the overflow
+	overflow:scroll;*/
 }
 
 /*supplies sits beside viewport div*/
@@ -26,11 +28,12 @@
 }
 
 #menus {
-	width:20%;
-	height:100%;
-	border:1px solid black;
-	float:right;
+	border:5px solid black;
 	padding:20px;
+}
+
+#blacksmithmenu {
+	display:none;
 }
 
 /*spot to debug and show status
@@ -66,6 +69,11 @@ R.I.P
 #numberofsupplies{
 	margin:0 auto;
 	text-align:center;
+}
+
+#town {
+	width:904px;
+	height:568px;
 }
 
 /* ***DEPRICATED*** old idea, leaving it in. kind of a funny way to just show the use of js and hidden menus

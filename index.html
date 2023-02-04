@@ -9,47 +9,34 @@
 <body>
 	<p>Gold: <span id="gold">0</span></p>
 	<p>Copper: <span id="copper">0</span></p>
-
 	<div id="container">
-
 		<div id="supplies">
 			<p id="numberofsupplies">0</p>
 			<button id="button" onclick="createSupplies()">Generate Supplies</button>
 			<p id="amount"></p>
 		</div>
-
-		<div id="menus">
-			<div id="forge">
-				<h1 id="header">Forge</h1>
+		<div id="viewport">
+			<!--creating a png as the map for the town-->
+			<img src="town.png" alt="town" id="town" usemap="#townmap">
+			<!--creating the image map-->
+			<map name="townmap">
+				<area shape="rect" coords="403,269, 493,355" alt="blacksmith" href="javascript:blacksmith();">
+			</map>
+			<div id="menus">
+				<h1 id="header">Welcome to Balzak</h1>
 				<ul id="menu">
-					<li><button onclick="createSword()">Create Sword</button></li>
-					<li><button onclick="createAxe()">Create Axe</button></li>
+					<li id="listitem1">Click on the map to travel around</li>
+					<li id="listitem2">for further help, click <a href="#">here</a></li>
 				</ul>
-				<h2 id="header">Smelting</h2>
-				<ul id="menu">
-					<li><button onclick="smeltCopper()">Smelt Copper</button></li>
-				</ul>
-			</div>
-			<div id="market">
-				<h1 id="header">Market</h1>
-				<ul id="menu">
-					<li><button onclick="sellSword()">Sell Sword</button></li>
-					<li><button onclick="sellAxe()">Sell Axe</button></li>
-				</ul>
-			</div>
-			<div id="mines">
-				<h1 id="header">Mines</h1>
-				<ul id="menu">
-					<li><button onclick="mineCopper()">Mine Copper</button></li>
+				<ul id="blacksmithmenu">
+					<button id="create_sword" onclick="createSword()">Create Sword</button>
+					<button id="create_axe" onclick="createAxe()">Create Axe</button>
 				</ul>
 			</div>
 		</div>
+	</div>
 
-			<div id="viewport">
-				<p id="info"></p>
-			</div>
 
-		</div>
 
 </body>
 </html>
