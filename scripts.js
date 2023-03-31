@@ -3,6 +3,7 @@ var gold = 0;
 var copper = 0;
 var strength = 5;
 var mininglevel = 1;
+var smithinglevel = 1;
 
 //function for showing inventory
 //depricated, but also handy because it sets it to block, and I'm lazy. so I'm keeping it here.
@@ -38,27 +39,72 @@ function createSupplies() {
 	//document.getElementById("info").appendChild(info);
 }
 
+//a function to create a smithing menu to choose what to make
+function createSmithingMenu() {
+	//use blacksmithmenu div to display smithing menu
+	var smithingmenu = document.getElementById("blacksmithmenu");
+	smithingmenu.style.display = "block";
+	//hook a button for each item to make
+	//hook into create_sword button change to img
+	var swordbutton = document.getElementById("create_sword");
+	swordbutton.src = "sword.png";
+	//hook into create_axe button change to img
+	var axebutton = document.getElementById("create_axe");
+	axebutton.src = "axe.jpeg";
+	}
+	
+
 //function to create a sword
 function createSword() {
 	//check that you have enough supplies to make a sword
 	//if supplies is equal to or greater to two then create a sword
-	if (total >= 2) {
-		//create a sword
-		var sword = document.createElement("img");
-		sword.src = "sword.png";
-		sword.id = "sword";
-		document.getElementById("supplies").appendChild(sword);
-		console.log("made sword");
-		//remove 2 supplies
-		total -= 2;
-		for (var i = 0; i < 2; i++) {
-			var bar = document.getElementById("copper_bar");
-			bar.remove();
-			}
+	//get the quality from the copper bar
+
+	//use the input from the input copperswordquantity
+	var copperswordquantity = document.getElementById("copperswordquantity").value;
+	//check if the input is a number
+	if (isNaN(copperswordquantity)) {
+		alert("Please enter a number");
 	}
-	//update total supplies
-	document.getElementById("numberofsupplies").innerHTML = total;
+	//check if you have enough supplies, if not alert
+	else if (total < 2*copperswordquantity) {
+		alert("You don't have enough supplies to make that many swords");
+	}
+	else {
+		//check if the input is 2*copperswordquantity or better
+		if (total >= 2*copperswordquantity) {
+			//remove 2*copperswordquantity supplies
+			total -= 2*copperswordquantity;
+			for (var i = 0; i < copperswordquantity; i++) {
+				//create sword
+				var sword = document.createElement("img");
+				sword.src = "sword.png";
+				sword.id = "sword";
+				document.getElementById("supplies").appendChild(sword);
+				console.log("made sword");
+				//remove 2 bars
+				for (var j = 0; j < 2; j++) {
+					let bar = document.getElementById("copper_bar");
+					bar.remove();
+				}
+				//update total supplies
+				document.getElementById("numberofsupplies").innerHTML = total;
+			}
+		}
+	}
 }
+
+function maxSword() {
+  // Get the number of copper bars available
+  const copperBars = Number(document.getElementById("numberofsupplies").textContent);
+
+  // Calculate the maximum number of swords that can be made with the available copper bars
+  const maxSwords = Math.floor(copperBars / 2);
+
+  // Set the copperswordquantity input field to the maximum number of swords
+  document.getElementById("copperswordquantity").value = maxSwords;
+}
+
 
 //function to crate an axe
 function createAxe() {
@@ -135,6 +181,23 @@ function mineCopper() {
 		ore.src = "Copper_ore_detail.png";
 		ore.id = "copper_ore";
 		document.getElementById("supplies").appendChild(ore);
+
+		//give each ore a random quality level from 0.01 - 100.00 as a float
+		let quality = Math.random() * 100;
+		//round quality to 2 decimal places
+		quality = Math.round(quality * 100) / 100;
+		//add quality to data attribute for img
+		ore.setAttribute("data-quality", quality);
+
+		if (quality >= 99.99) {
+			//if quality 99.99 make img copper_ore_perfect
+			ore.src = "Copper_ore_perfect_detail.png";
+		}
+
+		ore.addEventListener("mouseover", (event) => {
+			let quality = event.target.getAttribute("data-quality");
+			event.target.setAttribute("title", "Quality: " + quality);
+		});
 		//add one to total ore
 		copper++;
 		//show ores gained
@@ -162,6 +225,8 @@ function smeltCopper() {
 		//remove an ore
 		copper--;
 		let ore = document.getElementById("copper_ore");
+		//get quality of ore and store it
+		let quality = ore.getAttribute("data-quality");
 		ore.remove();
 		//add one to total bars
 		total++;
@@ -169,14 +234,35 @@ function smeltCopper() {
 		var img = document.createElement("img");
 		img.src = "copper_bar.jpeg";
 		img.id = "copper_bar";
+
+		//add quality to data attribute for img
+		img.setAttribute("data-quality", quality);
+		//smithing can increase quality of bars
+		//with this formula at 99 smithing the max quality to gain is 2.475
+		let smithing = smithinglevel/2 * 0.05;
+		//add smithing to quality
+		smithing += parseFloat(quality);
+
+		//round quality to 2 decimal places
+		quality = Math.round(smithing * 100) / 100;
+		//add quality to data attribute for img
+		img.setAttribute("data-quality", quality);
+
 		console.log("image created");
 		document.getElementById("supplies").appendChild(img);
 		document.getElementById("numberofsupplies").innerHTML = total;
+
+		//add event listener to show quality on hover
+		img.addEventListener("mouseover", (event) => {
+			let quality = event.target.getAttribute("data-quality");
+			event.target.setAttribute("title", "Quality: " + quality);
+		});
+
 		//write to info what you got
 		let info = document.createElement("p");
 		let infodetail = document.createTextNode("You made 1 copper bar");
 		info.appendChild(infodetail);
-		document.getElementById("info").appendChild(info);
+		//document.getElementById("info").appendChild(info);
 		document.getElementById("numberofsupplies").innerHTML = total;
 	}
 	else {

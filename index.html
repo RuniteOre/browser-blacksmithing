@@ -30,11 +30,44 @@
 					<li id="listitem1">Click on the map to travel around</li>
 					<li id="listitem2">for further help, click <a href="#">here</a></li>
 				</ul>
-				<ul id="blacksmithmenu">
-					<button id="create_sword" onclick="createSword()">Create Sword</button>
+				<!--changing blacksmithmenu into a table not a list-->
+
+				<table id="blacksmithmenu">
+					<tr>
+						<th>Item</th>
+						<th>Cost</th>
+						<th>Quantity</th>
+						<th>Create</th>
+					</tr>
+					<tr>
+						<td><label for="create_sword">Copper Sword</label></td>
+						<td><label for="create_sword" id="barsneeded">2 copper bars</label></td>
+						<td>
+							<form id="copperswordform"><input type="text" id="copperswordquantity" name="copperswordquantity" value="1" size="8" maxlength="2"></form>
+							<!-- button to make max amount of swords -->
+							<button id="maxsword" onclick="maxSword()">Max</button>
+						</td>
+						<td><button id="create_sword" onclick="createSword()"><img src="sword.png" id="menuitems"></button></td>
+					</tr>
+					<tr>
+						<td><label for="create_axe">Copper Axe</label></td>
+						<td><label for="create_axe" id="barsneeded">2 copper bars</label></td>
+						<td><form id="copperaxeform"><input type="text" id="copperaxequantity" name="copperaxequantity" value="1" size="1" maxlength="2"></form></td>
+						<td><button id="create_axe" onclick="createAxe()"><img src="axe.jpeg" id="menuitems"/></button></td>
+					</tr>
+					<tr>
+						<td><label for="smelt_ore">Smelt Ore</label></td>
+						<td><label for="smelt_ore" id="barsneeded">1 copper ore</label></td>
+						<td><form id="coppersmeltform"><input type="text" id="coppersmeltquantity" name="coppersmeltquantity" value="1" size="1" maxlength="2"></form></td>
+						<td><button id="smelt_ore" onclick="smeltCopper()"><img src="copper_bar.jpeg" id="menuitems"/></button></td>
+					</tr>
+				</table>
+
+			<!--		<button id="create_sword" onclick="createSword()"><img src="sword.png" id="menuitems"/></button>
+					<label for="create_sword">Create Sword</label>
 					<button id="create_axe" onclick="createAxe()">Create Axe</button>
-					<button id="smelt_ore" onclick="smeltCopper()">Smelt Ore</button>
-				</ul>
+					<button id="smelt_ore" onclick="smeltCopper()">Smelt Ore</button> -
+				</ul> -->
 				<ul id="marketmenu">
 					<button id="sell_sword" onclick="sellSword()">Sell Sword</button>
 					<button id="sell_axe" onclick="sellAxe()">Sell Axe</button>
